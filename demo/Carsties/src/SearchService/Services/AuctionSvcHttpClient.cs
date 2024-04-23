@@ -23,8 +23,8 @@ namespace SearchService.Services
                 .Sort(x => x.Descending(x => x.UpdatedAt))
                 .Project(x => x.UpdatedAt.ToString())
                 .ExecuteFirstAsync();
-
-            return await _httpClient.GetFromJsonAsync<List<Item>>(_config["AuctionServiceUrl"] + "api/auctions?date=" + lastUpdated);
+            Console.WriteLine("Last updated date:" + lastUpdated);
+            return await _httpClient.GetFromJsonAsync<List<Item>>(_config["AuctionServiceUrl"] + "/api/auctions?date=" + lastUpdated);
         }
     }
 }
