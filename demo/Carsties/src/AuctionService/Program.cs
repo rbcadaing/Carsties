@@ -1,8 +1,10 @@
+using System.Text;
 using AuctionService.Consumers;
 using AuctionService.Data;
 using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +30,11 @@ builder.Services.AddMassTransit(x =>
 
     x.UsingRabbitMq((context, cfg) =>
     {
+        cfg.Host(builder.Configuration["RabbitMq:Host"], "/", host =>
+        {
+            host.Username(builder.Configuration.GetValue("RabitMq:Username", "guest"));
+            host.Password(builder.Configuration.GetValue("RabitMq:Password", "guest"));
+        });
         cfg.ConfigureEndpoints(context);
     });
 });
@@ -36,11 +43,15 @@ builder.Services.AddMassTransit(x =>
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
+       // SecurityKey key = new SymmetricSecurityKey(System.Text.Encoding.ASCII.GetBytes("NotASecret"));
         options.Authority = builder.Configuration["IdentityServiceUrl"];
         // Turn off for http protocol use
         options.RequireHttpsMetadata = false;
         options.TokenValidationParameters.ValidateAudience = false;
         options.TokenValidationParameters.NameClaimType = "username";
+        options.TokenValidationParameters.ValidIssuer = "http://identity-svc";
+        //options.TokenValidationParameters.ValidateIssuerSigningKey = false;
+        //options.TokenValidationParameters.IssuerSigningKey = key;
     });
 
 var app = builder.Build();
