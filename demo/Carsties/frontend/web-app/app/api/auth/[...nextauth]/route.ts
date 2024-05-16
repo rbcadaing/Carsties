@@ -22,7 +22,6 @@ export const authOptions: NextAuthOptions = {
     callbacks: {
         // NextAuth Module Augmentation 'next-auth.d.ts'
         async jwt({ token, profile, account, user }) {
-            console.log({ token, profile, account, user });
             if (profile) {
                 token.username = profile.username
             }
