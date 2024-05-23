@@ -14,15 +14,14 @@ COPY src/IdentityService/IdentityService.csproj src/IdentityService/IdentityServ
 
 # Restore Package dependencies
 RUN dotnet restore Carsties.sln
+COPY src/BiddingService src/BiddingService 
+COPY src/Contracts src/Contracts 
 
-# Copy the app folders over
-COPY src/GatewayService src/GatewayService 
-
-WORKDIR /app/src/GatewayService
+WORKDIR /app/src/BiddingService
 RUN dotnet publish -c Release -o /app/src/out
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
 WORKDIR /app
 COPY --from=build /app/src/out .
-ENTRYPOINT [ "dotnet","GatewayService.dll" ]
+ENTRYPOINT [ "dotnet","BiddingService.dll" ]

@@ -1,5 +1,6 @@
 using AuctionService.Consumers;
 using AuctionService.Data;
+using AuctionService.Services;
 using MassTransit;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
@@ -15,6 +16,7 @@ builder.Services.AddDbContext<AuctionDbContext>(opt =>
     opt.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
 builder.Services.AddMassTransit(x =>
 {
     // Enable Service Bus Outbox functionality for retrying msg sending when Servicebus is down.
@@ -32,8 +34,8 @@ builder.Services.AddMassTransit(x =>
     {
         cfg.Host(builder.Configuration["RabbitMq:Host"], "/", host =>
         {
-            host.Username(builder.Configuration.GetValue("RabitMq:Username", "guest"));
-            host.Password(builder.Configuration.GetValue("RabitMq:Password", "guest"));
+            host.Username(builder.Configuration.GetValue("RabbitMq:Username", "guest"));
+            host.Password(builder.Configuration.GetValue("RabbitMq:Password", "guest"));
         });
         cfg.ConfigureEndpoints(context);
     });
@@ -60,6 +62,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
         //options.TokenValidationParameters.IssuerSigningKey = key;
     });
 
+builder.Services.AddGrpc();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -67,7 +71,7 @@ app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
-
+app.MapGrpcService<GrpcAuctionService>();
 try
 {
     DbInitializer.InitDb(app);
