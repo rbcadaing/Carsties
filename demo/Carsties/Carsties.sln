@@ -17,6 +17,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityService", "src\Iden
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiddingService", "src\BiddingService\BiddingService.csproj", "{1B120305-012C-4061-8AFE-6BE50358380A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NotificationService", "src\NotificationService\NotificationService.csproj", "{07658821-7F3A-4FB0-A6BB-A2F0887213FB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{1B120305-012C-4061-8AFE-6BE50358380A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1B120305-012C-4061-8AFE-6BE50358380A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1B120305-012C-4061-8AFE-6BE50358380A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07658821-7F3A-4FB0-A6BB-A2F0887213FB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07658821-7F3A-4FB0-A6BB-A2F0887213FB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07658821-7F3A-4FB0-A6BB-A2F0887213FB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07658821-7F3A-4FB0-A6BB-A2F0887213FB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{3DF216E0-3648-4B1D-B6C9-297230DB157E} = {98C03245-3948-4535-B906-01961E975BDB}
 		{4D33E440-ABF4-4C97-95B9-C4B96C18381C} = {98C03245-3948-4535-B906-01961E975BDB}
 		{1B120305-012C-4061-8AFE-6BE50358380A} = {98C03245-3948-4535-B906-01961E975BDB}
+		{07658821-7F3A-4FB0-A6BB-A2F0887213FB} = {98C03245-3948-4535-B906-01961E975BDB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {AB7D14D3-DCEC-4D75-BD21-BCF4E4A68106}
