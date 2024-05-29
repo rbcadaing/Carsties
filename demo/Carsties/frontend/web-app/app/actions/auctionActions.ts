@@ -3,9 +3,9 @@ import { Auction, Bid, PagedResult } from "@/types";
 import { NextApiRequest } from "next";
 import { getToken } from "next-auth/jwt";
 import { cookies, headers } from 'next/headers'
-import { fetchWrapper } from "@/lib/fetchWrapper";
 import { FieldValues } from "react-hook-form";
 import { revalidatePath } from "next/cache";
+import { fetchWrapper } from "../lib/fetchWrapper";
 
 export async function getData(query: string): Promise<PagedResult<Auction>> {
 

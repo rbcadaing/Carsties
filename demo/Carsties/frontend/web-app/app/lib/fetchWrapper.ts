@@ -1,6 +1,6 @@
 import { getTokenWorkaround } from "@/app/actions/auctionActions";
 
-const baseUrl = 'http://localhost:6001/'
+const baseUrl = process.env.API_URL;
 
 async function get(url: string) {
     const requestOptions = {
@@ -58,7 +58,7 @@ async function handleResponse(response: Response) {
     let data;
     try {
         data = JSON.parse(text);
-    } catch (error) {   
+    } catch (error) {
         data = text;
     }
 
@@ -69,7 +69,7 @@ async function handleResponse(response: Response) {
             status: response.status,
             message: typeof data === 'string' && data.length > 0 ? data : response.statusText
         }
-        return {error};
+        return { error };
     }
 }
 

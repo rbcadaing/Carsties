@@ -23,8 +23,8 @@ builder.Services.AddMassTransit(x =>
     {
         cfg.Host(builder.Configuration["RabbitMq:Host"], "/", host =>
         {
-            host.Username(builder.Configuration.GetValue("RabbitMq:Username", "guest"));
-            host.Password(builder.Configuration.GetValue("RabbitMq:Password", "guest"));
+            host.Username(builder.Configuration.GetValue("RabbitMq:Username", "carstiesUsr"));
+            host.Password(builder.Configuration.GetValue("RabbitMq:Password", "P1at0t67@@@@"));
         });
         
         //Configure Retry for specific endpoint

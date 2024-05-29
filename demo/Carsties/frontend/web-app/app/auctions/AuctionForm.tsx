@@ -51,7 +51,7 @@ export default function AuctionForm({ auction }: Props) {
             reset({ make, model, color, mileage, year });
         }
         setFocus('make');
-    }, [setFocus])
+    }, [setFocus,auction,reset])
     return (
         <form className='flex flex-col mt-3' onSubmit={handleSubmit(onSubmit)}>
             <Input label='Make' name='make' showLabel={true} control={control} rules={{ required: 'Make is required' }} />
