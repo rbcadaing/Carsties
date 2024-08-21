@@ -24,7 +24,6 @@ jobs:
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
       with:
-        working-directory: frontend/web-app
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: |
