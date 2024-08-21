@@ -28,13 +28,11 @@ jobs:
         cache-dependency-path: frontend/web-app
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-    - name: Install Dependencies
-      working-directory: frontend/web-app
     - run: |
+        cd frontend/web-app
         ls
         npm ci
-    - name: Build Solution
-      working-directory: frontend/web-app
     - run: |
+        cd frontend/web-app
         npm run build --if-present
     - run: npm test
