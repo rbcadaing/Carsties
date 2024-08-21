@@ -25,7 +25,6 @@ jobs:
       uses: actions/setup-node@v4
       with:
         working-directory: frontend/web-app
-        cache-dependency-path: frontend/web-app
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
     - run: |
