@@ -28,6 +28,7 @@ jobs:
         cache: 'npm'
     - run: |
         cd frontend/web-app
+        ls
         npm ci
     - run: |
         cd frontend/web-app
