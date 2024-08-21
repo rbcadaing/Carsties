@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: frontend/web-app
+        working-directory: demo/Carsties/frontend/web-app
 
     strategy:
       matrix:
