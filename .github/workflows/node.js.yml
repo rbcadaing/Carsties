@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./frontend/web-app
+        working-directory: frontend/web-app
 
     strategy:
       matrix:
