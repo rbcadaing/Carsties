@@ -30,5 +30,6 @@ jobs:
         cd frontend/web-app
         npm ci
     - run: |
+        cd frontend/web-app
         npm run build --if-present
     - run: npm test
