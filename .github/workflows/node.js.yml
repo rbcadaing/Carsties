@@ -12,10 +12,10 @@ on:
 jobs:
   build:
 
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: c:\demo_runner
+        working-directory: .\demo_runer
 
     strategy:
       matrix:
@@ -30,7 +30,7 @@ jobs:
         node-version-file: demo/Carsties/frontend/web-app/package-lock.json
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
-        cache-dependency-path: 'c:\demo_runner\demo\Carsties\frontendweb-app\package-lock.json'
+        cache-dependency-path: '.\demo_runner\demo\Carsties\frontendweb-app\package-lock.json'
     - run: |
         npm ci
     - run: |
