@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: .\demo_runer
+        working-directory: demo/Carsties/frontend/web-app
 
     strategy:
       matrix:
