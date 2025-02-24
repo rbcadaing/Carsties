@@ -23,4 +23,25 @@
 
 # VS Code Extensions
     1. C# Dev Kit by Microsoft
-    2. 
+    2. IntelliCode for C# Dev Kit by Microsoft
+    3. C# for Visual Studio Code base language support by Microsoft
+    4. .NET Install Tool by Microsoft
+    5. Material Icon Theme by Philipp Kief
+    6. NuGet Gallery by pcislo
+    7. PostgreSQL by Chris Kolkman
+
+
+# Create dotnet solution / project
+    1. donet new sln
+    2. dotnet new webapi -o src/AuctionService
+    3. add project to the solution "dotnet sln add src/AuctionService/"
+
+# Dotnet EF Tools
+    1. check if dotnet ef tools is install "dotnet tool list -g"
+    2. install dotnet ef tool "dotnet tool install --global dotnet-ef --version 7.0.20"
+    3. Create Migrations `dotnet ef migrations add "initial migration" -o Data/Migrations`
+    4. Drop Database "dotnet database drop"
+
+# Automate adding _ in the created class field
+    1. create ".editorconfig" file at the root folder'
+    2. go to assets folder and copy "editorconfig.txt" content to ".editorconfig" file
