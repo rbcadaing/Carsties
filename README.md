@@ -29,6 +29,7 @@
     5. Material Icon Theme by Philipp Kief
     6. NuGet Gallery by pcislo
     7. PostgreSQL by Chris Kolkman
+    8.MongoDB for VS Code by mongodb.com
 
 
 # Create dotnet solution / project
