@@ -36,6 +36,8 @@
     1. donet new sln
     2. dotnet new webapi -o src/AuctionService
     3. add project to the solution "dotnet sln add src/AuctionService/"
+    4. Add Contracts Class Library for mass transit contracts "dotnet new classlib -o src/Contracts"
+    5. Add reference to Contracts cd to auction and search service then execute "dotnet add reference ../../src/Contracts"
 
 # Dotnet EF Tools
     1. check if dotnet ef tools is install "dotnet tool list -g"
