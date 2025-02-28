@@ -29,7 +29,7 @@
     5. Material Icon Theme by Philipp Kief
     6. NuGet Gallery by pcislo
     7. PostgreSQL by Chris Kolkman
-    8.MongoDB for VS Code by mongodb.com
+    8. MongoDB for VS Code by mongodb.com
 
 
 # Create dotnet solution / project
@@ -38,6 +38,9 @@
     3. add project to the solution "dotnet sln add src/AuctionService/"
     4. Add Contracts Class Library for mass transit contracts "dotnet new classlib -o src/Contracts"
     5. Add reference to Contracts cd to auction and search service then execute "dotnet add reference ../../src/Contracts"
+    6. Istall Identity Server Templates and Create an Identity Service Project
+        a. dotnet new install Duende.IdentityServer.Templates
+        b. dotnet new isaspid -o src/IdentityService
 
 # Dotnet EF Tools
     1. check if dotnet ef tools is install "dotnet tool list -g"
