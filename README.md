@@ -52,3 +52,7 @@
 # Automate adding _ in the created class field
     1. create ".editorconfig" file at the root folder'
     2. go to assets folder and copy "editorconfig.txt" content to ".editorconfig" file
+
+
+# Docker Container
+    2. docker build -f src/AuctionService/Dockerfile -t testing123 . 
