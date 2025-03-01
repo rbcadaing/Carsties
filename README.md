@@ -41,6 +41,7 @@
     6. Istall Identity Server Templates and Create an Identity Service Project
         a. dotnet new install Duende.IdentityServer.Templates
         b. dotnet new isaspid -o src/IdentityService
+    7. Add Gateway Service "dotnet new web -o src/GatewayService"
 
 # Dotnet EF Tools
     1. check if dotnet ef tools is install "dotnet tool list -g"
