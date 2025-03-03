@@ -30,6 +30,9 @@
     6. NuGet Gallery by pcislo
     7. PostgreSQL by Chris Kolkman
     8. MongoDB for VS Code by mongodb.com
+    9. Tailwind CSS IntelliSense by tailwind Lab
+    10. ES7+ React/Redux/React-Native snippets by dsznajder
+    11. Auto Close Tag by Jun Han
 
 
 # Create dotnet solution / project
@@ -42,6 +45,9 @@
         a. dotnet new install Duende.IdentityServer.Templates
         b. dotnet new isaspid -o src/IdentityService
     7. Add Gateway Service "dotnet new web -o src/GatewayService"
+
+# Create NextJs app
+    1. npx create-next-app@latest
 
 # Dotnet EF Tools
     1. check if dotnet ef tools is install "dotnet tool list -g"
