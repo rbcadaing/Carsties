@@ -47,7 +47,8 @@
     7. Add Gateway Service "dotnet new web -o src/GatewayService"
 
 # Create NextJs app
-    1. npx create-next-app@latest
+    1. Use Node version v22.14.0
+    2. npx create-next-app@latest
 
 # Dotnet EF Tools
     1. check if dotnet ef tools is install "dotnet tool list -g"

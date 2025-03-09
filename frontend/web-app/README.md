@@ -41,7 +41,7 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/bui
  3. https://v2.tailwindcss.com/docs/guides/create-react-app docs if tailwind.config.js is missing
 
 
- ## NextAuth Setup
+ ## NextAuth Setup 
  1. https://authjs.dev/getting-started/installation?framework=
  2. run this code "npx auth secret" to genereate .env.local file containing secret
 
