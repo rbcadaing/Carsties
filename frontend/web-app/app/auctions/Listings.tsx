@@ -17,7 +17,9 @@ export default function Listings() {
         pageSize: state.pageSize,
         searchTerm: state.searchTerm,
         orderBy: state.orderBy,
-        filterBy: state.filterBy
+        filterBy: state.filterBy,
+        seller: state.seller,
+        winner: state.winner
     })));
 
     const setParams = useParamsStore(state => state.setParams);
@@ -30,6 +32,7 @@ export default function Listings() {
     useEffect(() => {
         getData(url).then(data => {
             setData(data);
+            console.log(data);
         });
     }, [url])
 
