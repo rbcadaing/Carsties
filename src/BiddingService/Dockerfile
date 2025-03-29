@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /app
 EXPOSE 80
 
-# Copy all .csprj files and restore as distinct layeys. Use of the same COPY command
+# Copy all .csprj files and restore as distinct layers. Use of the same COPY command
 # for every dockerfile in the project to take advantage of docker caching
 
 COPY Carsties.sln Carsties.sln
@@ -17,14 +17,14 @@ COPY src/IdentityService/IdentityService.csproj src/IdentityService/IdentityServ
 # Restore Package Deps
 RUN dotnet restore Carsties.sln
 
-COPY src/AuctionService src/AuctionService
+COPY src/BiddingService src/BiddingService
 COPY src/Contracts src/Contracts
 
-WORKDIR /app/src/AuctionService
+WORKDIR /app/src/BiddingService
 RUN dotnet publish -c Release -o /app/src/out
 
 # Build runtime image
 FROM mcr.microsoft.com/dotnet/aspnet:9.0
 WORKDIR /app
 COPY --from=build /app/src/out .
-ENTRYPOINT [ "dotnet","AuctionService.dll" ]
+ENTRYPOINT [ "dotnet","BiddingService.dll" ]

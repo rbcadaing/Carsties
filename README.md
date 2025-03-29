@@ -33,6 +33,7 @@
     9. Tailwind CSS IntelliSense by tailwind Lab
     10. ES7+ React/Redux/React-Native snippets by dsznajder
     11. Auto Close Tag by Jun Han
+    12. vscode-proto3 by zxh404
 
 
 # Create dotnet solution / project
@@ -45,6 +46,7 @@
         a. dotnet new install Duende.IdentityServer.Templates
         b. dotnet new isaspid -o src/IdentityService
     7. Add Gateway Service "dotnet new web -o src/GatewayService"
+    8. dotnet new webapi -o src/BiddingService -controllers
 
 # Create NextJs app
     1. Use Node version v22.14.0
@@ -62,4 +64,4 @@
 
 
 # Docker Container
-    2. docker build -f src/AuctionService/Dockerfile -t testing123 . 
+    2. docker build -f src/AuctionService/Dockerfile -t testing123 .
