@@ -47,7 +47,8 @@
         b. dotnet new isaspid -o src/IdentityService
     7. Add Gateway Service "dotnet new web -o src/GatewayService"
     8. dotnet new webapi -o src/BiddingService -controllers
-
+    9. dotnet new web -o src/NotificationService
+    10.
 # Create NextJs app
     1. Use Node version v22.14.0
     2. npx create-next-app@latest
