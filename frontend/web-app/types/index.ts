@@ -1,3 +1,4 @@
+
 export type PagedResult<T> = {
     results: T[],
     pageCount: number,
@@ -9,7 +10,7 @@ export type Auction = {
     seller: string
     winner?: string
     soldAmount: number
-    currentHighBid: any
+    currentHighBid: number
     createdAt: string
     updatedAt: string
     auctionEnd: string
@@ -39,3 +40,4 @@ export type AuctionFinished = {
   seller: string
   amount?: number
 }
+
