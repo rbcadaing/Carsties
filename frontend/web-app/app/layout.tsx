@@ -23,7 +23,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en">
-      <body>
+      <body suppressHydrationWarning={true}>
         <ToasterProvider />
         <Navbar />
         <main className="container mx-auto px-5 pt-10">
