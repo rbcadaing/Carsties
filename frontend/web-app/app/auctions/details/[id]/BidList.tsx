@@ -8,7 +8,7 @@ import { User } from 'next-auth';
 import React, { useEffect, useState } from 'react'
 import toast from 'react-hot-toast';
 import BidItem from './BidItem';
-import { numberWithCommas } from '@/lib/numberWithComma';
+import { numberWithCommas } from '@/app/lib/numberWithComma';
 import Heading from '@/app/components/Heading';
 import EmptyFilter from '@/app/components/EmptyFIlter';
 import BidForm from './BidForm';

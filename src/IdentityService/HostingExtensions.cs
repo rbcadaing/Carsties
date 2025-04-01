@@ -15,14 +15,16 @@ internal static class HostingExtensions
         builder.Services.AddRazorPages();
 
         builder.Services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+            options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection"))
+        );
 
-        builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+        builder
+            .Services.AddIdentity<ApplicationUser, IdentityRole>()
             .AddEntityFrameworkStores<ApplicationDbContext>()
             .AddDefaultTokenProviders();
 
-        builder.Services
-            .AddIdentityServer(options =>
+        builder
+            .Services.AddIdentityServer(options =>
             {
                 options.Events.RaiseErrorEvents = true;
                 options.Events.RaiseInformationEvents = true;
@@ -73,8 +75,7 @@ internal static class HostingExtensions
         app.UseIdentityServer();
         app.UseAuthorization();
 
-        app.MapRazorPages()
-            .RequireAuthorization();
+        app.MapRazorPages().RequireAuthorization();
 
         return app;
     }

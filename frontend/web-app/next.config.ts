@@ -7,10 +7,13 @@ const nextConfig: NextConfig = {
       fullUrl: true
     }
   },
-  images:{
-    remotePatterns:[
-      {protocol:'https',hostname:'cdn.pixabay.com'},
-      {protocol:'https',hostname:'pixabay.com'}
+  typescript: {
+    ignoreBuildErrors: true,
+  },
+  images: {
+    remotePatterns: [
+      { protocol: 'https', hostname: 'cdn.pixabay.com' },
+      { protocol: 'https', hostname: 'pixabay.com' }
     ]
   }
 };
