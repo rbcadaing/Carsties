@@ -34,6 +34,7 @@
     10. ES7+ React/Redux/React-Native snippets by dsznajder
     11. Auto Close Tag by Jun Han
     12. vscode-proto3 by zxh404
+    13. Kubernetes by Microsoft
 
 
 # Create dotnet solution / project
