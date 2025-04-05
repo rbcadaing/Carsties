@@ -66,3 +66,11 @@
 
 # Docker Container
     2. docker build -f src/AuctionService/Dockerfile -t testing123 .
+
+# Create SSL Cert for Ingress
+    1. mkcert -install
+    2. mkcert -key-file carsties.local.key -cert-file carsties.local.crt app.carsties.local api.carsties.local id.carsties.local
+
+
+# Assets
+    1. mkcert - https://github.com/FiloSottile/mkcert
